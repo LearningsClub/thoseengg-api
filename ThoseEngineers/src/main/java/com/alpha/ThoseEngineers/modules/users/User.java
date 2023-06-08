@@ -1,8 +1,8 @@
 package com.alpha.ThoseEngineers.modules.users;
 
+import com.alpha.ThoseEngineers.modules.bids.Bid;
 import com.alpha.ThoseEngineers.modules.jobs.data.Job;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -39,21 +39,24 @@ public class User {
     private LocalDateTime updatedAt;
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<Job> jobList;
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    private List<Bid> bid;
 
 
     // Getters, Setters and Constructors
     public User() {
     }
 
-    public User(Integer id, String name, Long mobNo, String emailIid, Usertype usertype, LocalDateTime createdAt, LocalDateTime updatedAt, List<Job> jobList) {
+    public User(Integer id, String name, Long mobNo, String emailId, Usertype usertype, LocalDateTime createdAt, LocalDateTime updatedAt, List<Job> jobList, List<Bid> bid) {
         this.id = id;
         this.name = name;
         this.mobNo = mobNo;
-        this.emailId = emailIid;
+        this.emailId = emailId;
         this.usertype = usertype;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.jobList = jobList;
+        this.bid = bid;
     }
 
     public Integer getId() {
@@ -118,5 +121,13 @@ public class User {
     @JsonIgnore
     public void setJobList(List<Job> jobList) {
         this.jobList = jobList;
+    }
+    @JsonIgnore
+    public List<Bid> getBid() {
+        return bid;
+    }
+    @JsonIgnore
+    public void setBid(List<Bid> bid) {
+        this.bid = bid;
     }
 }

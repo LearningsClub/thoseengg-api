@@ -1,5 +1,7 @@
 package com.alpha.ThoseEngineers.dto.jobs;
 
+import com.alpha.ThoseEngineers.dto.users.UserRequestBody;
+
 enum StatusList{
     OpenToBid,
     Assigned,

@@ -1,4 +1,4 @@
-package com.alpha.ThoseEngineers.dto.jobs;
+package com.alpha.ThoseEngineers.dto.users;
 
 public class UserRequestBody {
     private String name;

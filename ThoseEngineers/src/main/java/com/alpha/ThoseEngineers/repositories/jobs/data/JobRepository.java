@@ -11,4 +11,6 @@ import java.util.List;
 public interface JobRepository extends JpaRepository<Job, Long> {
     @Query(value = "SELECT * FROM jobs",nativeQuery = true)
     public List<Job> getAllJobs();
+    @Query(value = "SELECT id FROM jobs WHERE title =:Title", nativeQuery = true)
+    public Long getJobId(String Title);
 }

@@ -39,7 +39,7 @@ public class JobService implements IJobService{
 
     public JobResponseBody create(CreateJobRequestBody jobRequestBody) {
         Job newJob = new Job();
-        com.alpha.ThoseEngineers.dto.jobs.JobResponseBody responseBody = new com.alpha.ThoseEngineers.dto.jobs.JobResponseBody();
+        JobResponseBody responseBody = new JobResponseBody();
 
         newJob.setTitle(jobRequestBody.getTitle());
         newJob.setDescription(jobRequestBody.getDescription());

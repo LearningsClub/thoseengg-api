@@ -1,5 +1,6 @@
 package com.alpha.ThoseEngineers.modules.jobs.data;
 
+import com.alpha.ThoseEngineers.modules.bids.Bid;
 import com.alpha.ThoseEngineers.modules.jobs.technicals.Domain;
 import com.alpha.ThoseEngineers.modules.jobs.technicals.Framework;
 import com.alpha.ThoseEngineers.modules.jobs.technicals.Language;
@@ -10,6 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "Jobs")
@@ -48,11 +50,14 @@ public class Job {
     @JoinColumn(name = "file_id")
     private File file;
 
+    @OneToMany(mappedBy = "job",cascade = CascadeType.ALL)
+    private List<Bid> bid;
+
 
     public Job() {
     }
 
-    public Job(Long id, String title, String description, float budget, StatusList status, LocalDateTime createdAt, LocalDateTime updatedAt, User user, Language language, Domain domain, Framework framework, File file) {
+    public Job(Long id, String title, String description, float budget, StatusList status, LocalDateTime createdAt, LocalDateTime updatedAt, User user, Language language, Domain domain, Framework framework, File file, List<Bid> bid) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -65,6 +70,7 @@ public class Job {
         this.domain = domain;
         this.framework = framework;
         this.file = file;
+        this.bid = bid;
     }
 
     public Long getId() {
@@ -161,5 +167,15 @@ public class Job {
 
     public void setFile(File file) {
         this.file = file;
+    }
+
+    @JsonIgnore
+    public List<Bid> getBid() {
+        return bid;
+    }
+
+    @JsonIgnore
+    public void setBid(List<Bid> bid) {
+        this.bid = bid;
     }
 }
