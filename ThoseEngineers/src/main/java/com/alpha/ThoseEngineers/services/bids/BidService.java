@@ -6,7 +6,7 @@ import com.alpha.ThoseEngineers.modules.bids.Bid;
 import com.alpha.ThoseEngineers.modules.bids.Duration;
 import com.alpha.ThoseEngineers.modules.jobs.data.Job;
 import com.alpha.ThoseEngineers.modules.users.User;
-import com.alpha.ThoseEngineers.repositories.bid.BidRepository;
+import com.alpha.ThoseEngineers.repositories.bids.BidRepository;
 import com.alpha.ThoseEngineers.repositories.jobs.data.JobRepository;
 import com.alpha.ThoseEngineers.repositories.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

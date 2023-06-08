@@ -1,4 +1,4 @@
-package com.alpha.ThoseEngineers.repositories.bid;
+package com.alpha.ThoseEngineers.repositories.bids;
 
 
 import com.alpha.ThoseEngineers.modules.bids.Bid;
