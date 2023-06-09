@@ -2,6 +2,8 @@ package com.alpha.ThoseEngineers.repositories.bids;
 
 
 import com.alpha.ThoseEngineers.modules.bids.Bid;
+import com.alpha.ThoseEngineers.modules.jobs.data.Job;
+import com.alpha.ThoseEngineers.modules.users.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

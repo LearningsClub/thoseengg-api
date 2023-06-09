@@ -9,7 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "bids")
+@Table(name = "bids",uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "job_id"}))
 
 public class Bid {
     @Id
