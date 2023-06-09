@@ -82,13 +82,19 @@ public class BidService implements IBidService{
             responseBody.setCreatedAt(bid.getCreatedAt());
             responseBody.setUpdatedAt(bid.getUpdatedAt());
 
-            Job job=bid.getJob();
-            job.setBid(null);
-            responseBody.setJob(job);
-
             User user=bid.getUser();
             user.setBid(null);
+            user.setJobList(null);
             responseBody.setUser(user);
+
+            Job job=bid.getJob();
+            job.setBid(null);
+            job.setUser(null);
+            job.setLanguage(null);
+            job.setDomain(null);
+            job.setFramework(null);
+            job.setFile(null);
+            responseBody.setJob(job);
 
 
             responseBodyList.add(responseBody);
