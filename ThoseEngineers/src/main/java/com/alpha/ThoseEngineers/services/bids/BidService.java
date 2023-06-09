@@ -114,15 +114,17 @@ public class BidService implements IBidService{
 
         User user=bid.getUser();
         user.setBid(null);
+        user.setJobList(null);
         responseBody.setUser(user);
 
         Job job=bid.getJob();
         job.setBid(null);
-        job.setFramework(null);
-        job.setDomain(null);
+        job.setUser(null);
         job.setLanguage(null);
+        job.setDomain(null);
+        job.setFramework(null);
+        job.setFile(null);
         responseBody.setJob(job);
-
 
         return responseBody;
     }
