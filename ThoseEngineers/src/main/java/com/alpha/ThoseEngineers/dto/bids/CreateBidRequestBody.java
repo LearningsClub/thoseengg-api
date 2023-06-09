@@ -1,12 +1,10 @@
 package com.alpha.ThoseEngineers.dto.bids;
 
-import com.alpha.ThoseEngineers.dto.jobs.CreateJobRequestBody;
 import com.alpha.ThoseEngineers.dto.users.UserRequestBody;
-import com.alpha.ThoseEngineers.modules.bids.Duration;
 
 public class CreateBidRequestBody {
     private float biddingAmount;
-    private String duration;
+    private String frequency;
     private Integer deadline;
     private String relevantExperience;
     private String suggestions;
@@ -17,9 +15,9 @@ public class CreateBidRequestBody {
     public CreateBidRequestBody() {
     }
 
-    public CreateBidRequestBody(float biddingAmount, String duration, Integer deadline, String relevantExperience, String suggestions, boolean negotiable, UserRequestBody userRequestBody, JobRequestBody jobRequestBody) {
+    public CreateBidRequestBody(float biddingAmount, String frequency, Integer deadline, String relevantExperience, String suggestions, boolean negotiable, UserRequestBody userRequestBody, JobRequestBody jobRequestBody) {
         this.biddingAmount = biddingAmount;
-        this.duration = duration;
+        this.frequency = frequency;
         this.deadline = deadline;
         this.relevantExperience = relevantExperience;
         this.suggestions = suggestions;
@@ -36,12 +34,12 @@ public class CreateBidRequestBody {
         this.biddingAmount = biddingAmount;
     }
 
-    public String getDuration() {
-        return duration;
+    public String getFrequency() {
+        return frequency;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
     }
 
     public Integer getDeadline() {

@@ -17,7 +17,7 @@ public class Bid {
     private Integer id;
     private float biddingAmount;
     @Enumerated(EnumType.STRING)
-    private Duration duration;
+    private Frequency frequency;
     private Integer deadline;
     private String relevantExperience;
     private String suggestions;
@@ -36,10 +36,10 @@ public class Bid {
     public Bid() {
     }
 
-    public Bid(Integer id, float biddingAmount, Duration duration, Integer deadline, String relevantExperience, String suggestions, LocalDateTime createdAt, LocalDateTime updatedAt, Job job, User user, boolean negotiable) {
+    public Bid(Integer id, float biddingAmount, Frequency frequency, Integer deadline, String relevantExperience, String suggestions, LocalDateTime createdAt, LocalDateTime updatedAt, Job job, User user, boolean negotiable) {
         this.id = id;
         this.biddingAmount = biddingAmount;
-        this.duration = duration;
+        this.frequency = frequency;
         this.deadline = deadline;
         this.relevantExperience = relevantExperience;
         this.suggestions = suggestions;
@@ -66,12 +66,12 @@ public class Bid {
         this.biddingAmount = biddingAmount;
     }
 
-    public Duration getDuration() {
-        return duration;
+    public Frequency getFrequency() {
+        return frequency;
     }
 
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void setFrequency(Frequency frequency) {
+        this.frequency = frequency;
     }
 
     public Integer getDeadline() {

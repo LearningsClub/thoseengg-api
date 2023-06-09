@@ -1,9 +1,8 @@
 package com.alpha.ThoseEngineers.dto.bids;
 
-import com.alpha.ThoseEngineers.modules.bids.Duration;
+import com.alpha.ThoseEngineers.modules.bids.Frequency;
 import com.alpha.ThoseEngineers.modules.jobs.data.Job;
 import com.alpha.ThoseEngineers.modules.users.User;
-import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,7 +11,7 @@ import java.time.LocalDateTime;
 public class BidResponseBody {
     private Integer id;
     private float biddingAmount;
-    private Duration duration;
+    private Frequency frequency;
     private Integer deadline;
     private String relevantExperience;
     private String suggestions;
@@ -27,10 +26,10 @@ public class BidResponseBody {
     public BidResponseBody() {
     }
 
-    public BidResponseBody(Integer id, float biddingAmount, Duration duration, Integer deadline, String relevantExperience, String suggestions, LocalDateTime createdAt, LocalDateTime updatedAt, Job job, User user, boolean negotiable) {
+    public BidResponseBody(Integer id, float biddingAmount, Frequency frequency, Integer deadline, String relevantExperience, String suggestions, LocalDateTime createdAt, LocalDateTime updatedAt, Job job, User user, boolean negotiable) {
         this.id = id;
         this.biddingAmount = biddingAmount;
-        this.duration = duration;
+        this.frequency = frequency;
         this.deadline = deadline;
         this.relevantExperience = relevantExperience;
         this.suggestions = suggestions;
@@ -57,12 +56,12 @@ public class BidResponseBody {
         this.biddingAmount = biddingAmount;
     }
 
-    public Duration getDuration() {
-        return duration;
+    public Frequency getFrequency() {
+        return frequency;
     }
 
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void setFrequency(Frequency frequency) {
+        this.frequency = frequency;
     }
 
     public Integer getDeadline() {

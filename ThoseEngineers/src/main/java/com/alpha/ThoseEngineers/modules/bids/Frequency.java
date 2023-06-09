@@ -1,6 +1,6 @@
 package com.alpha.ThoseEngineers.modules.bids;
 
-public enum Duration {
+public enum Frequency {
     Daily,
     Weekly,
     Monthly,
